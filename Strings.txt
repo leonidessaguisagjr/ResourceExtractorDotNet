@@ -1,0 +1,37 @@
+# Copyright (c) 2016 Leonides T. Saguisag, Jr.
+#
+# This file is part of ResourceExtractorDotNet.
+#
+# ResourceExtractorDotNet is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# ResourceExtractorDotNet is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with ResourceExtractorDotNet.  If not, see <http://www.gnu.org/licenses/>.
+
+# Header Screen
+FormatAppNameAndVersion={0} v{1}.{2}
+
+# Usage Screen
+FormatUsage=\nUsage:\n{0} <assembly> <output directory>\n - <assembly>: File name of .NET assembly to extract resources from (REQUIRED).\n - <output directory>: Directory to extract resources to (REQUIRED).  NOTE: If\n                       the output directory already exists, any existing files\n                       will be overwritten without warning.\n
+FormatExample=Example:\n{0} TestAssembly.dll .\\output
+
+# Error Messages
+ErrorMissingUnrecognizedArgs=ERROR: Missing or unrecognized arguments!
+FormatErrorInputFileDoesNotExist=ERROR: Input file "{0}" does not exist!
+FormatErrorNotValidNETAssembly=ERROR: File "{0}" is not a valid .NET Assembly!
+FormatErrorUnableToLoadAssembly=ERROR: Unable to load assembly "{0}"
+FormatErrorUnableToLoadReferencedAssembly=ERROR: Unable to load referenced assembly "{0}"
+
+# Warning Messages
+FormatWarningOutputDirectoryAlreadyExists=WARNING: Output directory "{0}" already exists; any existing files will be overwritten.
+
+# Informational Messages
+FormatTotalExtracted=Extracted {0} resource(s) from assembly "{1}" to directory "{2}".
+NoResourcesFound=No resources found.

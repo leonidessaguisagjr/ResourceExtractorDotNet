@@ -1,0 +1,4 @@
+build/
+fxcopreport.html
+run_fxcop.cmd
+run_test.cmd

@@ -1,0 +1,37 @@
+<Project DefaultTargets="Build"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <PropertyGroup>
+        <OutputPath>build\</OutputPath>
+        <OutputAssemblyName>TestAssembly.dll</OutputAssemblyName>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Restext Include="*.txt" />
+        <EmbeddedResource Include="*.wav" />
+        <EmbeddedResource Include="*.jpg" />
+    </ItemGroup>
+
+    <Target Name="CompileResources">
+        <MakeDir Directories="$(OutputPath)" Condition="!Exists('$(OutputPath)')" />
+        <GenerateResource
+            Sources="@(Restext)"
+            OutputResources="@(Restext->'$(OutputPath)%(Filename).resources')">
+            <Output
+                TaskParameter="OutputResources"
+                ItemName="Resources"/>
+        </GenerateResource>
+    </Target>
+
+    <Target Name="Build" DependsOnTargets="CompileResources">
+        <AL
+            EmbedResources="@(EmbeddedResource);@(Resources)"
+            OutputAssembly="$(OutputPath)$(OutputAssemblyName)">
+        </AL>
+    </Target>
+
+    <Target Name="Clean">
+        <RemoveDir Directories="$(OutputPath)" />
+    </Target>
+
+</Project>
